@@ -5,49 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>가격 안내 | 보고 예술사진관</title>
   <meta name="description" content="종로 보고 예술사진관의 여권사진, 프로필 사진 가격과 사진 파일 포함 여부 안내">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
-      color: #222;
-      background: #fff;
-      line-height: 1.7;
-    }
-    a { color: inherit; text-decoration: none; }
-    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
-
-    /* 상단 메뉴 */
-    header { border-bottom: 1px solid #e5e5e5; background: #fff; position: sticky; top: 0; z-index: 10; }
-    header .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding-top: 12px; padding-bottom: 12px; }
-    .logo { font-size: 1.2rem; font-weight: bold; }
-    nav { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 0.95rem; }
-    nav a:hover { color: #8a6d3b; }
-    nav a.current { color: #8a6d3b; font-weight: bold; }
-
-    section { padding: 64px 0; }
-    section h1 { font-size: 1.8rem; text-align: center; margin-bottom: 8px; }
-    section .lead { text-align: center; color: #666; margin-bottom: 36px; word-break: keep-all; }
-
-    /* 가격 목록 */
-    .price-list { max-width: 720px; margin: 0 auto; display: grid; gap: 16px; }
-    .item {
-      border: 1px solid #e5e5e5; border-radius: 6px; padding: 24px;
-      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
-    }
-    .item h2 { font-size: 1.2rem; margin-bottom: 4px; }
-    .item .desc { color: #666; font-size: 0.95rem; margin-bottom: 10px; }
-    .item dl { display: grid; grid-template-columns: 80px 1fr; gap: 4px 8px; }
-    .item dt { color: #666; }
-    .item dd.price { color: #8a6d3b; font-weight: bold; }
-    .btn { display: inline-block; padding: 12px 20px; border-radius: 6px; font-weight: bold; border: 2px solid #3a2e1f; background: #3a2e1f; color: #fff; white-space: nowrap; }
-
-    footer { background: #222; color: #aaa; padding: 32px 0; font-size: 0.9rem; text-align: center; }
-
-    @media (max-width: 640px) {
-      section { padding: 48px 0; }
-      .item .btn { width: 100%; text-align: center; }
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -65,11 +26,16 @@
     </div>
   </header>
 
-  <section>
+  <section class="page-head">
     <div class="wrap">
+      <p class="eyebrow">PRICE</p>
       <h1>가격 안내</h1>
       <p class="lead">촬영 종류별 가격과 사진 파일 포함 여부를 확인하세요.</p>
+    </div>
+  </section>
 
+  <section>
+    <div class="wrap">
       <div class="price-list">
         <!-- 여권사진 -->
         <div class="item">
@@ -81,7 +47,7 @@
               <dt>사진 파일</dt><dd>[포함 여부 미정]</dd>
             </dl>
           </div>
-          <a href="tel:" class="btn">예약·문의</a>
+          <a href="tel:" class="btn btn-main">예약·문의</a>
         </div>
 
         <!-- 프로필 -->
@@ -94,9 +60,10 @@
               <dt>사진 파일</dt><dd>[포함 여부 미정]</dd>
             </dl>
           </div>
-          <a href="tel:" class="btn">예약·문의</a>
+          <a href="tel:" class="btn btn-main">예약·문의</a>
         </div>
       </div>
+      <p class="more"><a href="index.html#finder">나에게 맞는 촬영 찾기 →</a></p>
     </div>
   </section>
 
@@ -106,6 +73,12 @@
       <p>© 2026 보고 예술사진관</p>
     </div>
   </footer>
+
+  <!-- 휴대폰에서만 보이는 하단 버튼 -->
+  <div class="mobile-bar">
+    <a href="tel:" class="call">전화 예약</a>
+    <a href="#" class="kakao">카카오톡 문의</a>
+  </div>
 
 </body>
 </html>

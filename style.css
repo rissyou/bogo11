@@ -1,0 +1,196 @@
+/* 보고 예술사진관 공통 스타일: 큰 타이포 · 다크 + 그레인 */
+:root {
+  --bg: #0f0e0c;
+  --bg-2: #171512;
+  --panel: #1f1c18;
+  --line: #2e2a24;
+  --text: #ece6dc;
+  --muted: #9b9286;
+  --accent: #c9a66b;
+  --display: "Noto Serif KR", "Batang", serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: var(--bg); }
+body {
+  font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.7;
+  word-break: keep-all;
+  overflow-x: hidden;
+}
+/* 필름 그레인 */
+body::after {
+  content: ""; position: fixed; inset: -50%; z-index: 100; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.09;
+  animation: grain 1.2s steps(6) infinite;
+}
+@keyframes grain {
+  0%   { transform: translate(0, 0); }
+  20%  { transform: translate(-3%, 2%); }
+  40%  { transform: translate(2%, -3%); }
+  60%  { transform: translate(-2%, -1%); }
+  80%  { transform: translate(3%, 3%); }
+  100% { transform: translate(0, 0); }
+}
+@media (prefers-reduced-motion: reduce) { body::after { animation: none; } }
+
+a { color: inherit; text-decoration: none; }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+
+/* 상단 메뉴 */
+header { border-bottom: 1px solid var(--line); background: rgba(15,14,12,0.85); backdrop-filter: blur(8px); position: sticky; top: 0; z-index: 10; }
+header .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding-top: 14px; padding-bottom: 14px; }
+.logo { font-family: var(--display); font-size: 1.2rem; font-weight: 700; letter-spacing: -0.02em; }
+nav { display: flex; flex-wrap: wrap; gap: 4px 20px; font-size: 0.95rem; color: var(--muted); }
+nav a:hover { color: var(--accent); }
+
+/* 첫 화면 */
+.hero { padding: 96px 0 80px; }
+.hero .eyebrow { color: var(--accent); font-size: 0.85rem; letter-spacing: 0.3em; margin-bottom: 24px; }
+.hero h1 {
+  font-family: var(--display); font-weight: 900;
+  font-size: clamp(2.8rem, 11vw, 9.5rem); line-height: 1.04; letter-spacing: -0.04em;
+  margin-bottom: 28px;
+}
+.hero h1 .line { display: block; }
+.hero h1 .soft { color: var(--muted); font-weight: 500; }
+.hero .kinds { color: var(--accent); font-weight: bold; font-size: clamp(1.05rem, 2.4vw, 1.5rem); margin-bottom: 48px; }
+.hero-photo {
+  margin: 0 0 40px; aspect-ratio: 16 / 9;
+  background: var(--panel); border: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: center; color: var(--muted);
+}
+.hero p { color: var(--muted); font-size: 1.1rem; margin-bottom: 36px; max-width: 640px; }
+.buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn { display: inline-block; padding: 16px 28px; font-weight: bold; border: 1px solid var(--text); transition: background .2s, color .2s; cursor: pointer; font-size: 1rem; font-family: inherit; }
+.btn-main { background: var(--text); color: var(--bg); }
+.btn-main:hover { background: var(--accent); border-color: var(--accent); }
+.btn-sub { background: transparent; color: var(--text); }
+.btn-sub:hover { background: var(--text); color: var(--bg); }
+.school {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px;
+  margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--line);
+}
+.school span { color: var(--muted); font-size: 0.95rem; }
+
+/* 공통 구역 */
+section { padding: 112px 0; border-top: 1px solid var(--line); }
+section h2 {
+  font-family: var(--display); font-weight: 900;
+  font-size: clamp(2.4rem, 7vw, 5.5rem); line-height: 1.05; letter-spacing: -0.035em;
+  margin-bottom: 16px;
+}
+section .lead { color: var(--muted); font-size: 1.1rem; margin-bottom: 56px; max-width: 640px; }
+.more { margin-top: 40px; }
+.more a { border-bottom: 1px solid var(--accent); color: var(--accent); padding-bottom: 2px; }
+
+/* 나에게 맞는 촬영 찾기 (선택형 개인화) */
+.finder { background: var(--bg-2); }
+.finder .q { margin-bottom: 36px; }
+.finder .q-title { font-weight: bold; margin-bottom: 14px; }
+.finder .q-title b { color: var(--accent); margin-right: 8px; }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip {
+  padding: 12px 20px; border: 1px solid var(--line); background: transparent; color: var(--text);
+  font-family: inherit; font-size: 1rem; cursor: pointer; transition: border-color .2s, background .2s, color .2s;
+}
+.chip:hover { border-color: var(--muted); }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); font-weight: bold; }
+.result {
+  margin-top: 16px; border: 1px solid var(--accent); padding: 32px 24px; display: none;
+}
+.result.show { display: block; }
+.result .tag { color: var(--accent); font-size: 0.85rem; letter-spacing: 0.2em; margin-bottom: 8px; }
+.result h3 { font-family: var(--display); font-weight: 900; font-size: clamp(1.8rem, 5vw, 3.2rem); line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 12px; }
+.result p { color: var(--muted); margin-bottom: 8px; }
+.result ul { list-style: none; margin: 16px 0 28px; }
+.result li { padding: 8px 0; border-top: 1px solid var(--line); }
+.result li::before { content: "— "; color: var(--accent); }
+.finder .hint { color: var(--muted); font-size: 0.9rem; }
+
+/* 대표 작품 */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+.photo {
+  aspect-ratio: 4 / 5; background: var(--panel); border: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: center; color: var(--muted);
+}
+.card h3 { font-family: var(--display); margin-top: 16px; font-size: 1.6rem; letter-spacing: -0.02em; }
+.card p { color: var(--muted); font-size: 0.95rem; }
+
+/* 소개 */
+.about { background: var(--bg-2); }
+.about-box { max-width: 760px; }
+.about-box p { margin-bottom: 14px; font-size: 1.15rem; color: var(--muted); }
+.about-box p:first-child { font-family: var(--display); font-size: clamp(1.4rem, 3vw, 2rem); color: var(--text); line-height: 1.4; }
+
+/* 촬영 종류 */
+.services { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.service { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 32px 24px; }
+.service h3 { font-family: var(--display); font-size: 1.8rem; letter-spacing: -0.02em; margin-bottom: 6px; }
+.service p { color: var(--muted); }
+.service .price { color: var(--accent); font-weight: bold; margin-top: 12px; }
+
+/* 졸업앨범 단체 */
+.group { background: var(--accent); color: var(--bg); border-top: 0; }
+.group .lead { color: #2c241a; }
+.group .btn { border-color: var(--bg); background: var(--bg); color: var(--text); }
+.group .btn:hover { background: transparent; color: var(--bg); }
+
+/* 위치와 영업시간 */
+.info { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+.map { aspect-ratio: 4 / 3; background: var(--panel); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; color: var(--muted); }
+.info dl { display: grid; grid-template-columns: 90px 1fr; gap: 14px; align-content: start; }
+.info dt { font-weight: bold; color: var(--accent); }
+
+footer { background: #0a0908; color: var(--muted); padding: 40px 0; font-size: 0.9rem; border-top: 1px solid var(--line); }
+
+/* 휴대폰 하단 고정 버튼 */
+.mobile-bar { display: none; }
+@media (max-width: 640px) {
+  .hero { padding: 56px 0 48px; }
+  section { padding: 72px 0; }
+  section .lead { margin-bottom: 36px; }
+  body { padding-bottom: 60px; }
+  .mobile-bar {
+    display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 20;
+  }
+  .mobile-bar a { flex: 1; text-align: center; padding: 16px 0; font-weight: bold; }
+  .mobile-bar .call { background: var(--text); color: var(--bg); }
+  .mobile-bar .kakao { background: #f7d900; color: #222; }
+}
+
+/* 현재 페이지 메뉴 표시 */
+nav a.current { color: var(--accent); font-weight: bold; }
+
+/* 하위 페이지 머리말 */
+.page-head { padding: 96px 0 64px; border-top: 0; }
+.page-head .eyebrow { color: var(--accent); font-size: 0.85rem; letter-spacing: 0.3em; margin-bottom: 20px; }
+.page-head h1 {
+  font-family: var(--display); font-weight: 900;
+  font-size: clamp(2.8rem, 10vw, 8rem); line-height: 1.04; letter-spacing: -0.04em;
+  margin-bottom: 20px;
+}
+.page-head .lead { color: var(--muted); font-size: 1.1rem; max-width: 640px; }
+
+/* 가격 목록 */
+.price-list { border-top: 1px solid var(--line); }
+.item {
+  border-bottom: 1px solid var(--line); padding: 40px 0;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px;
+}
+.item h2 {
+  font-family: var(--display); font-weight: 900;
+  font-size: clamp(2rem, 5vw, 3.6rem); line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 6px;
+}
+.item .desc { color: var(--muted); margin-bottom: 14px; }
+.item dl { display: grid; grid-template-columns: 90px 1fr; gap: 6px 12px; }
+.item dt { color: var(--muted); }
+.item dd.price { color: var(--accent); font-weight: bold; }
+.item .btn { white-space: nowrap; }
+
+@media (max-width: 640px) {
+  .page-head { padding: 56px 0 40px; }
+  .item .btn { width: 100%; text-align: center; }
+}
