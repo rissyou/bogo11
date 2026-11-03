@@ -210,3 +210,6 @@ nav a.current { color: var(--accent); font-weight: bold; }
 }
 .steps h3 { font-family: var(--display); font-size: clamp(1.5rem, 4vw, 2.4rem); letter-spacing: -0.02em; line-height: 1.2; }
 .steps p { grid-column: 2; color: var(--muted); }
+
+/* 제목 없이 머리말 바로 아래 오는 구역 */
+section.tight { padding-top: 0; border-top: 0; }
