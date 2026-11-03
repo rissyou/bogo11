@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>작품 갤러리 | 보고 예술사진관</title>
+  <meta name="description" content="보고 예술사진관의 웨딩·프로필·졸업앨범·여권사진 작품 모음">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 상단 메뉴 -->
+  <header>
+    <div class="wrap">
+      <a href="index.html" class="logo">보고 예술사진관</a>
+      <nav>
+        <a href="about.html">소개</a>
+        <a href="gallery.html" class="current">작품 갤러리</a>
+        <a href="price.html">가격 안내</a>
+        <a href="album.html">졸업앨범</a>
+        <a href="contact.html">예약·오시는 길</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">GALLERY</p>
+      <h1>작품 갤러리</h1>
+      <p class="lead">40년의 경험이 담긴 사진을 직접 확인해 보세요.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="chips gallery-filter" id="filter">
+        <button type="button" class="chip" data-v="all" aria-pressed="true">전체</button>
+        <button type="button" class="chip" data-v="wedding" aria-pressed="false">웨딩</button>
+        <button type="button" class="chip" data-v="profile" aria-pressed="false">프로필</button>
+        <button type="button" class="chip" data-v="school" aria-pressed="false">졸업앨범</button>
+        <button type="button" class="chip" data-v="passport" aria-pressed="false">여권사진</button>
+      </div>
+
+      <div class="grid" id="gallery">
+        <div class="card" data-kind="wedding">
+          <div class="photo">웨딩 사진 (준비 중)</div>
+          <h3>웨딩</h3>
+          <p>두 사람의 가장 빛나는 날을 자연스럽고 품격 있게 담습니다.</p>
+        </div>
+        <div class="card" data-kind="profile">
+          <div class="photo">프로필 사진 (준비 중)</div>
+          <h3>프로필</h3>
+          <p>취업, 업무, 개인 기록까지 나다운 모습을 찾아 드립니다.</p>
+        </div>
+        <div class="card" data-kind="school">
+          <div class="photo">졸업앨범 사진 (준비 중)</div>
+          <h3>졸업앨범</h3>
+          <p>초·중·고·대학원 졸업앨범을 40년 동안 만들어 왔습니다.</p>
+        </div>
+        <div class="card" data-kind="passport">
+          <div class="photo">여권사진 (준비 중)</div>
+          <h3>여권사진</h3>
+          <p>여권·증명사진</p>
+        </div>
+      </div>
+      <p class="more"><a href="index.html#finder">나에게 맞는 촬영 찾기 →</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p>보고 예술사진관 · 서울 종로구 [주소 미정] · 전화 [미정]</p>
+      <p>© 2026 보고 예술사진관</p>
+    </div>
+  </footer>
+
+  <!-- 휴대폰에서만 보이는 하단 버튼 -->
+  <div class="mobile-bar">
+    <a href="tel:" class="call">전화 예약</a>
+    <a href="#" class="kakao">카카오톡 문의</a>
+  </div>
+
+  <script>
+    (function () {
+      var filter = document.getElementById("filter");
+      var cards = document.querySelectorAll("#gallery .card");
+      filter.addEventListener("click", function (e) {
+        var btn = e.target.closest(".chip");
+        if (!btn) return;
+        filter.querySelectorAll(".chip").forEach(function (c) { c.setAttribute("aria-pressed", c === btn ? "true" : "false"); });
+        var v = btn.dataset.v;
+        cards.forEach(function (card) { card.hidden = v !== "all" && card.dataset.kind !== v; });
+      });
+    })();
+  </script>
+
+</body>
+</html>

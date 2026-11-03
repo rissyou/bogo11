@@ -194,3 +194,19 @@ nav a.current { color: var(--accent); font-weight: bold; }
   .page-head { padding: 56px 0 40px; }
   .item .btn { width: 100%; text-align: center; }
 }
+/* 갤러리 */
+.gallery-filter { margin-bottom: 40px; }
+.card[hidden] { display: none; }
+
+/* 졸업앨범: 문의할 때 알려 주실 내용 */
+.steps { list-style: none; border-top: 1px solid var(--line); counter-reset: step; }
+.steps li {
+  counter-increment: step; border-bottom: 1px solid var(--line); padding: 28px 0;
+  display: grid; grid-template-columns: 72px 1fr; gap: 8px 16px; align-items: baseline;
+}
+.steps li::before {
+  content: counter(step, decimal-leading-zero);
+  font-family: var(--display); font-weight: 900; font-size: 2rem; color: var(--accent);
+}
+.steps h3 { font-family: var(--display); font-size: clamp(1.5rem, 4vw, 2.4rem); letter-spacing: -0.02em; line-height: 1.2; }
+.steps p { grid-column: 2; color: var(--muted); }
