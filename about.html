@@ -3,59 +3,129 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>소개 | 보고 예술사진관</title>
-  <meta name="description" content="종로에서 40년, 보고 예술사진관을 소개합니다">
+  <title>소개 | 보고 예술사진관 · 종로 40년 사진관</title>
+  <meta name="description" content="종로에서 40년, 보고 예술사진관의 역사와 사진사를 소개합니다.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Sans+KR:wght@300;400;500&family=Noto+Serif+KR:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="site.js"></script>
 </head>
 <body>
 
-  <!-- 상단 메뉴 -->
-  <header>
+  <header class="site-header">
     <div class="wrap">
-      <a href="index.html" class="logo">보고 예술사진관</a>
-      <nav>
+      <a href="index.html" class="brand"><span class="ko">보고 예술사진관</span><span class="en">Jongno · Since 40 years</span></a>
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="menu">MENU</button>
+      <nav class="menu" id="menu">
         <a href="about.html" class="current">소개</a>
         <a href="gallery.html">작품 갤러리</a>
         <a href="price.html">가격 안내</a>
         <a href="album.html">졸업앨범</a>
         <a href="contact.html">예약·오시는 길</a>
+        <a href="tel:" class="call-top">전화 예약 [번호 미정]</a>
       </nav>
     </div>
   </header>
 
-  <section class="page-head">
+  <section class="page-hero">
     <div class="wrap">
-      <p class="eyebrow">ABOUT</p>
-      <h1>40년,<br>한자리에서</h1>
-      <p class="lead">종로에서 40년 동안 사진관을 운영해 왔습니다.</p>
+      <p class="eyebrow reveal">About</p>
+      <h1 class="display reveal">40년,<br>한자리에서</h1>
+      <p class="lead reveal">종로에서 40년 동안 사진관을 운영해 왔습니다.</p>
     </div>
   </section>
 
-  <section class="about">
-    <div class="wrap">
-      <div class="about-box">
-        <p>학교의 졸업앨범부터 웨딩, 프로필, 여권사진까지 손님 한 분 한 분의 소중한 순간을 정성껏 기록합니다.</p>
-        <p>[사진사 소개 글 준비 중]</p>
+  <section class="section">
+    <div class="wrap story">
+      <div class="reveal"><p class="big-num">40<small>년</small></p></div>
+      <div class="reveal">
+        <p class="eyebrow">Our story</p>
+        <h2 class="title">사진관이 걸어온 길</h2>
+        <p>학교의 졸업앨범부터 웨딩, 프로필, 여권사진까지 손님 한 분 한 분의 소중한 순간을 정성껏 기록해 왔습니다.</p>
+        <p>[사진관 역사 소개 글 준비 중]</p>
       </div>
-      <p class="more"><a href="index.html">메인으로 돌아가기 →</a></p>
     </div>
   </section>
 
-  <footer>
+  <section class="section tone">
     <div class="wrap">
-      <p>보고 예술사진관 · 서울 종로구 [주소 미정] · 전화 [미정]</p>
-      <p>© 2026 보고 예술사진관</p>
+      <div class="section-head reveal">
+        <p class="eyebrow">History</p>
+        <h2 class="title">40년의 기록</h2>
+      </div>
+      <ol class="timeline reveal">
+        <li><p class="when">Since</p><div><h3>종로에서 문을 열다</h3><p>[개업 연도와 이야기 준비 중]</p></div></li>
+        <li><p class="when">Album</p><div><h3>졸업앨범을 만들어 온 시간</h3><p>초·중·고·대학원 졸업앨범을 만들어 왔습니다. [제작 실적 정리 중]</p></div></li>
+        <li><p class="when">Today</p><div><h3>인생의 모든 순간을</h3><p>웨딩, 프로필, 여권사진까지 개인 손님의 순간도 함께 담고 있습니다.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap profile">
+      <div class="ph tall reveal"><span>사진사 사진 (준비 중)</span></div>
+      <div class="reveal">
+        <p class="eyebrow">Photographer</p>
+        <h2 class="title">사진사 [이름 미정]</h2>
+        <p class="quote">[어떤 마음으로 사진을 찍는지, 사진사의 한마디 준비 중]</p>
+        <p class="lead">[사진사 소개 글 준비 중]</p>
+        <div class="actions">
+          <a href="gallery.html" class="btn">작품 보기</a>
+          <a href="contact.html#booking" class="btn btn-gold">예약하기</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band on-dark">
+    <div class="wrap center reveal">
+      <p class="eyebrow center">For schools</p>
+      <h2 class="title">졸업앨범을 맡길 곳을 찾고 계신가요?</h2>
+      <p class="lead">40년 동안 만들어 온 졸업앨범 진행 과정과 실적을 확인해 보세요.</p>
+      <div class="actions"><a href="album.html" class="btn btn-gold">졸업앨범 안내 보기</a></div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="top">
+        <div>
+          <a href="index.html" class="brand"><span class="ko">보고 예술사진관</span><span class="en">Jongno · Since 40 years</span></a>
+          <p>종로에서 40년, 졸업앨범부터 웨딩·프로필·여권사진까지 믿고 맡기는 전문 사진관</p>
+        </div>
+        <div>
+          <h4>Menu</h4>
+          <ul>
+            <li><a href="about.html">소개</a></li>
+            <li><a href="gallery.html">작품 갤러리</a></li>
+            <li><a href="price.html">가격 안내</a></li>
+            <li><a href="album.html">졸업앨범</a></li>
+            <li><a href="contact.html">예약·오시는 길</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>전화 [미정]</li>
+            <li>카카오톡 [미정]</li>
+            <li>서울 종로구 [미정]</li>
+            <li>영업시간 [미정]</li>
+          </ul>
+        </div>
+      </div>
+      <div class="bottom">
+        <p>© 2026 보고 예술사진관</p>
+        <p>사이트의 사진은 게재 동의를 받은 사진만 사용합니다.</p>
+      </div>
     </div>
   </footer>
 
-  <!-- 휴대폰에서만 보이는 하단 버튼 -->
-  <div class="mobile-bar">
-    <a href="tel:" class="call">전화 예약</a>
-    <a href="#" class="kakao">카카오톡 문의</a>
-  </div>
+  <nav class="quick-bar" aria-label="빠른 연락">
+    <a href="tel:" class="call">전화</a>
+    <a href="sms:">문자</a>
+    <a href="#" class="kakao">카카오톡</a>
+  </nav>
 
 </body>
 </html>

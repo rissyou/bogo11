@@ -3,240 +3,201 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>보고 예술사진관 | 종로 40년 전문 사진관</title>
-  <meta name="description" content="종로에서 40년, 졸업앨범부터 웨딩·프로필·여권사진까지 믿고 맡기는 전문 사진관">
+  <title>보고 예술사진관 | 종로 40년 사진관 · 졸업앨범 · 웨딩 · 프로필 · 여권사진</title>
+  <meta name="description" content="종로에서 40년, 졸업앨범부터 웨딩·프로필·여권사진까지 믿고 맡기는 전문 사진관. 전화·카카오톡·온라인으로 예약하세요.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Sans+KR:wght@300;400;500&family=Noto+Serif+KR:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="site.js"></script>
 </head>
 <body>
 
-  <!-- 상단 메뉴 -->
-  <header>
+  <header class="site-header">
     <div class="wrap">
-      <a href="index.html" class="logo">보고 예술사진관</a>
-      <nav>
+      <a href="index.html" class="brand"><span class="ko">보고 예술사진관</span><span class="en">Jongno · Since 40 years</span></a>
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="menu">MENU</button>
+      <nav class="menu" id="menu">
         <a href="about.html">소개</a>
         <a href="gallery.html">작품 갤러리</a>
         <a href="price.html">가격 안내</a>
         <a href="album.html">졸업앨범</a>
         <a href="contact.html">예약·오시는 길</a>
+        <a href="tel:" class="call-top">전화 예약 [번호 미정]</a>
       </nav>
     </div>
   </header>
 
-  <!-- 첫 화면: 핵심 문장과 예약 버튼 -->
-  <div class="hero">
+  <!-- 첫 화면 -->
+  <section class="hero on-dark">
+    <div class="frame"><span>대표 촬영 사진 (준비 중)</span></div>
     <div class="wrap">
-      <p class="eyebrow">JONGNO · SEOUL · 40 YEARS</p>
-      <h1><span class="line soft">종로에서 40년,</span><span class="line">보고 예술사진관</span></h1>
-      <p class="kinds">졸업앨범 · 웨딩 · 프로필 · 여권사진</p>
-      <div class="hero-photo">대표 촬영 사진 (준비 중)</div>
-      <p>40년 동안 한자리에서 수많은 졸업앨범과 인생의 소중한 순간을 담아 왔습니다.</p>
-      <div class="buttons">
-        <a href="tel:" class="btn btn-main">전화 예약 [번호 미정]</a>
-        <a href="#" class="btn btn-sub">카카오톡 문의</a>
-        <a href="contact.html" class="btn btn-sub">온라인 예약</a>
-        <a href="#finder" class="btn btn-sub">나에게 맞는 촬영 찾기</a>
+      <p class="eyebrow reveal">Jongno · Seoul · 40 years</p>
+      <h1 class="display reveal">종로에서 <em>40년</em>,<br>보고 예술사진관</h1>
+      <p class="kinds reveal">졸업앨범 · 웨딩 · 프로필 · 여권사진</p>
+      <p class="sub reveal">졸업앨범부터 웨딩·프로필·여권사진까지, 40년 동안 한자리에서 인생의 소중한 순간을 담아 왔습니다.</p>
+      <div class="actions reveal">
+        <a href="tel:" class="btn btn-gold">전화 예약</a>
+        <a href="#" class="btn">카카오톡 문의</a>
+        <a href="contact.html#booking" class="btn">온라인 예약</a>
       </div>
-      <div class="school">
-        <a href="album.html" class="btn btn-sub">학교 단체 졸업앨범 문의</a>
-        <span>학교명, 예상 인원, 희망 촬영 시기를 알려주세요</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- 나에게 맞는 촬영 찾기: 선택형 개인화 추천 -->
-  <section class="finder" id="finder">
-    <div class="wrap">
-      <h2>나에게 맞는 촬영 찾기</h2>
-      <p class="lead">두 가지만 골라 주세요. 상황에 맞는 촬영과 준비물을 바로 알려 드립니다.</p>
-
-      <div class="q">
-        <p class="q-title"><b>01</b>어떤 사진이 필요하세요?</p>
-        <div class="chips" data-q="purpose">
-          <button type="button" class="chip" data-v="job" aria-pressed="false">취업·이력서</button>
-          <button type="button" class="chip" data-v="passport" aria-pressed="false">여권·증명</button>
-          <button type="button" class="chip" data-v="wedding" aria-pressed="false">결혼·커플</button>
-          <button type="button" class="chip" data-v="profile" aria-pressed="false">개인 프로필</button>
-          <button type="button" class="chip" data-v="school" aria-pressed="false">학교 졸업앨범</button>
-        </div>
-      </div>
-
-      <div class="q">
-        <p class="q-title"><b>02</b>원하는 분위기는요?</p>
-        <div class="chips" data-q="mood">
-          <button type="button" class="chip" data-v="neat" aria-pressed="false">단정하고 깔끔하게</button>
-          <button type="button" class="chip" data-v="natural" aria-pressed="false">자연스럽고 편안하게</button>
-          <button type="button" class="chip" data-v="classic" aria-pressed="false">클래식하고 품격 있게</button>
-        </div>
-      </div>
-
-      <div class="result" id="finder-result" aria-live="polite">
-        <p class="tag">추천 촬영</p>
-        <h3 id="r-title"></h3>
-        <p id="r-desc"></p>
-        <ul id="r-tips"></ul>
-        <div class="buttons">
-          <a id="r-cta" href="contact.html" class="btn btn-main">이 촬영으로 예약하기</a>
-          <a href="price.html" class="btn btn-sub">가격 보기</a>
-        </div>
-      </div>
-      <p class="hint">선택한 내용은 저장되거나 전송되지 않습니다.</p>
+      <p class="group-line reveal">학교·기관 담당자이신가요? <a href="album.html#quote">졸업앨범 단체 견적 요청 →</a></p>
     </div>
   </section>
-
-  <script>
-    (function () {
-      var picks = {};
-      var plans = {
-        job:      { title: "취업 프로필 촬영", desc: "면접관에게 신뢰를 주는 첫인상을 만듭니다.", tips: ["흰 셔츠나 단색 재킷을 준비하세요", "이력서 규격 사이즈로 보정·인화해 드립니다", "원본 파일도 함께 받아 가실 수 있습니다"], cta: "contact.html" },
-        passport: { title: "여권·증명사진", desc: "규정에 맞게 바로 찍고 바로 받아 가세요.", tips: ["귀와 이마가 드러나도록 준비하세요", "흰 배경 규정에 맞춰 촬영합니다", "예약 없이 방문해도 됩니다"], cta: "contact.html" },
-        wedding:  { title: "웨딩 촬영", desc: "두 사람의 가장 빛나는 날을 오래 남깁니다.", tips: ["원하는 사진 예시를 미리 보내 주세요", "의상·소품은 상담 때 함께 정합니다", "촬영 일정은 최소 2주 전 예약을 권합니다"], cta: "contact.html" },
-        profile:  { title: "개인 프로필 촬영", desc: "업무용부터 기념 기록까지, 나다운 모습을 찾습니다.", tips: ["의상 2~3벌을 준비하면 좋습니다", "사용할 곳(SNS·명함·홈페이지)을 알려 주세요", "여러 컷 중 직접 골라 보정해 드립니다"], cta: "contact.html" },
-        school:   { title: "학교 단체 졸업앨범", desc: "40년 동안 만들어 온 졸업앨범, 맞춤 견적으로 안내합니다.", tips: ["학교명과 예상 인원을 알려 주세요", "희망 촬영 시기를 정해 주시면 일정을 맞춥니다", "개인·단체·행사 촬영을 함께 진행합니다"], cta: "album.html" }
-      };
-      var moods = {
-        neat: "단정하고 깔끔한 분위기로, 밝은 조명과 정돈된 배경에서 촬영합니다.",
-        natural: "자연스럽고 편안한 분위기로, 대화하며 긴장을 풀고 촬영합니다.",
-        classic: "클래식하고 품격 있는 분위기로, 깊은 조명과 차분한 색감으로 촬영합니다."
-      };
-      function render() {
-        if (!picks.purpose) return;
-        var p = plans[picks.purpose];
-        document.getElementById("r-title").textContent = p.title;
-        document.getElementById("r-desc").textContent = p.desc + (picks.mood ? " " + moods[picks.mood] : "");
-        var ul = document.getElementById("r-tips");
-        ul.innerHTML = "";
-        p.tips.forEach(function (t) { var li = document.createElement("li"); li.textContent = t; ul.appendChild(li); });
-        document.getElementById("r-cta").href = p.cta;
-        document.getElementById("finder-result").classList.add("show");
-      }
-      document.querySelectorAll("#finder .chips").forEach(function (group) {
-        group.addEventListener("click", function (e) {
-          var btn = e.target.closest(".chip");
-          if (!btn) return;
-          group.querySelectorAll(".chip").forEach(function (c) { c.setAttribute("aria-pressed", c === btn ? "true" : "false"); });
-          picks[group.dataset.q] = btn.dataset.v;
-          render();
-        });
-      });
-    })();
-  </script>
 
   <!-- 1. 대표 작품 -->
-  <section>
+  <section class="section">
     <div class="wrap">
-      <h2>대표 작품</h2>
-      <p class="lead">40년의 경험이 담긴 사진을 직접 확인해 보세요.</p>
-      <div class="grid">
-        <div class="card">
-          <div class="photo">웨딩 사진 (준비 중)</div>
-          <h3>웨딩</h3>
-          <p>두 사람의 가장 빛나는 날을 자연스럽고 품격 있게 담습니다.</p>
+      <div class="section-head split reveal">
+        <div>
+          <p class="eyebrow">Portfolio</p>
+          <h2 class="title">대표 작품</h2>
+          <p class="lead">말보다 사진 한 장이 먼저입니다. 분야별로 가장 아끼는 사진을 모았습니다.</p>
         </div>
-        <div class="card">
-          <div class="photo">프로필 사진 (준비 중)</div>
-          <h3>프로필</h3>
-          <p>취업, 업무, 개인 기록까지 나다운 모습을 찾아 드립니다.</p>
-        </div>
-        <div class="card">
-          <div class="photo">졸업앨범 사진 (준비 중)</div>
-          <h3>졸업앨범</h3>
-          <p>초·중·고·대학원 졸업앨범을 40년 동안 만들어 왔습니다.</p>
-        </div>
+        <a href="gallery.html" class="text-link">작품 갤러리 전체 보기 →</a>
       </div>
-      <p class="more"><a href="gallery.html">작품 더 보기 →</a></p>
+      <div class="works">
+        <a href="gallery.html#wedding" class="work reveal">
+          <div class="ph tall"><span>웨딩 사진 (준비 중)</span></div>
+          <div class="meta"><span class="num">01</span><h3>웨딩</h3></div>
+          <p>두 사람의 가장 빛나는 날을 품격 있게 담습니다.</p>
+        </a>
+        <a href="gallery.html#profile" class="work reveal">
+          <div class="ph tall"><span>프로필 사진 (준비 중)</span></div>
+          <div class="meta"><span class="num">02</span><h3>프로필</h3></div>
+          <p>취업, 업무, 개인 기록까지 나다운 모습을 찾아 드립니다.</p>
+        </a>
+        <a href="gallery.html#album" class="work reveal">
+          <div class="ph tall"><span>졸업앨범 · 촬영 현장 (준비 중)</span></div>
+          <div class="meta"><span class="num">03</span><h3>졸업앨범</h3></div>
+          <p>초·중·고·대학원 졸업앨범을 40년 동안 만들어 왔습니다.</p>
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- 2. 40년 경력과 사진사 소개 -->
-  <section class="about">
-    <div class="wrap">
-      <h2>40년, 한자리에서</h2>
-      <div class="about-box">
-        <p>종로에서 40년 동안 사진관을 운영해 왔습니다.</p>
-        <p>학교의 졸업앨범부터 웨딩, 프로필, 여권사진까지<br>손님 한 분 한 분의 소중한 순간을 정성껏 기록합니다.</p>
-        <p>[사진사 소개 글 준비 중]</p>
+  <!-- 2. 40년 경력과 사진사 -->
+  <section class="section tone">
+    <div class="wrap story">
+      <div class="reveal">
+        <p class="big-num">40<small>년</small></p>
       </div>
-      <p class="more"><a href="about.html">사진관 소개 보기 →</a></p>
+      <div class="reveal">
+        <p class="eyebrow">Our story</p>
+        <h2 class="title">한자리에서 지켜 온<br>40년의 신뢰</h2>
+        <p>종로에서 40년 동안 사진관을 운영해 왔습니다. 학교의 졸업앨범부터 웨딩, 프로필, 여권사진까지 손님 한 분 한 분의 소중한 순간을 정성껏 기록합니다.</p>
+        <p class="quote">[사진사의 한마디 준비 중]</p>
+        <a href="about.html" class="text-link">사진관과 사진사 소개 →</a>
+      </div>
     </div>
   </section>
 
   <!-- 3. 촬영 종류별 가격 -->
-  <section>
+  <section class="section">
     <div class="wrap">
-      <h2>촬영 안내</h2>
-      <p class="lead">촬영 종류별 가격을 확인하세요.</p>
-      <div class="services">
-        <div class="service">
-          <h3>졸업앨범</h3>
-          <p>초·중·고·대학원 단체 촬영</p>
-          <p class="price">별도 견적</p>
+      <div class="section-head split reveal">
+        <div>
+          <p class="eyebrow">Price</p>
+          <h2 class="title">촬영 안내</h2>
+          <p class="lead">촬영 종류별 가격을 확인하세요. 졸업앨범은 인원과 구성에 맞춰 견적을 드립니다.</p>
         </div>
-        <div class="service">
-          <h3>웨딩</h3>
-          <p>웨딩 촬영</p>
-          <p class="price">[가격 미정]</p>
-        </div>
-        <div class="service">
-          <h3>프로필</h3>
-          <p>개인·취업·업무용 프로필</p>
-          <p class="price">[가격 미정]</p>
-        </div>
-        <div class="service">
-          <h3>여권사진</h3>
-          <p>여권·증명사진</p>
-          <p class="price">[가격 미정]</p>
-        </div>
+        <a href="price.html" class="text-link">가격 자세히 보기 →</a>
       </div>
-      <p class="more"><a href="price.html">자세한 가격 보기 →</a></p>
+      <div class="price-mini reveal">
+        <div><h3>졸업앨범</h3><p>초·중·고·대학원 단체</p><p class="amount">별도 견적</p></div>
+        <div><h3>웨딩</h3><p>웨딩 촬영</p><p class="amount">[가격 미정]</p></div>
+        <div><h3>프로필</h3><p>개인·취업·업무용</p><p class="amount">[가격 미정]</p></div>
+        <div><h3>여권사진</h3><p>여권·증명사진</p><p class="amount">[가격 미정]</p></div>
+      </div>
     </div>
   </section>
 
   <!-- 학교·기관 단체 견적 -->
-  <section class="group">
+  <section class="band on-dark">
+    <div class="wrap center reveal">
+      <p class="eyebrow center">For schools</p>
+      <h2 class="title">학교·기관 졸업앨범 담당자님께</h2>
+      <p class="lead">학교명, 졸업 인원, 원하는 촬영 시기를 알려 주세요. 맞춤 견적을 보내 드립니다.</p>
+      <div class="actions">
+        <a href="album.html#quote" class="btn btn-gold">단체 견적 요청하기</a>
+        <a href="album.html" class="btn">졸업앨범 진행 과정 보기</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 예약 방법 -->
+  <section class="section">
     <div class="wrap">
-      <h2>학교·기관 졸업앨범 담당자님께</h2>
-      <p class="lead">학교명, 예상 인원, 희망 촬영 시기를 알려주세요. 맞춤 견적을 보내 드립니다.</p>
-      <div class="buttons">
-        <a href="album.html" class="btn">학교 단체 졸업앨범 문의</a>
+      <div class="section-head center reveal">
+        <p class="eyebrow center">Reservation</p>
+        <h2 class="title">편하신 방법으로 예약하세요</h2>
+      </div>
+      <div class="contact-ways reveal">
+        <a href="tel:"><p class="kind">Call</p><h3>전화 예약</h3><p>[번호 미정] · 가장 빠르고 확실한 방법입니다.</p></a>
+        <a href="#"><p class="kind">Message</p><h3>카카오톡 · 문자</h3><p>통화가 어려우실 때 편하게 남겨 주세요.</p></a>
+        <a href="contact.html#booking"><p class="kind">Online</p><h3>온라인 예약</h3><p>밤늦게나 쉬는 날에도 예약을 남기실 수 있습니다.</p></a>
       </div>
     </div>
   </section>
 
   <!-- 4. 위치와 영업시간 -->
-  <section>
-    <div class="wrap">
-      <h2>오시는 길</h2>
-      <p class="lead">예약 없이 바로 찾아오셔도 됩니다.</p>
-      <div class="info">
-        <div class="map">지도 (준비 중)</div>
-        <dl>
-          <dt>주소</dt><dd>서울 종로구 [미정]</dd>
-          <dt>전화</dt><dd>[미정]</dd>
-          <dt>카카오톡</dt><dd>[미정]</dd>
-          <dt>영업시간</dt><dd>[미정]</dd>
-          <dt>쉬는 날</dt><dd>[미정]</dd>
+  <section class="section tone">
+    <div class="wrap visit">
+      <div class="ph wide reveal"><span>지도 (준비 중)</span></div>
+      <div class="reveal">
+        <p class="eyebrow">Visit</p>
+        <h2 class="title">오시는 길</h2>
+        <p class="lead" style="margin-bottom:28px">여권사진처럼 급하실 때는 예약 없이 바로 오셔도 됩니다.</p>
+        <dl class="info-list">
+          <div><dt>주소</dt><dd>서울 종로구 [미정]</dd></div>
+          <div><dt>전화</dt><dd>[미정]</dd></div>
+          <div><dt>영업시간</dt><dd>[미정]</dd></div>
+          <div><dt>쉬는 날</dt><dd>[미정]</dd></div>
         </dl>
+        <p style="margin-top:28px"><a href="contact.html" class="text-link">찾아오는 길 자세히 →</a></p>
       </div>
-      <p class="more"><a href="contact.html">예약·오시는 길 자세히 보기 →</a></p>
     </div>
   </section>
 
-  <footer>
+  <footer class="site-footer">
     <div class="wrap">
-      <p>보고 예술사진관 · 서울 종로구 [주소 미정] · 전화 [미정]</p>
-      <p>© 2026 보고 예술사진관</p>
+      <div class="top">
+        <div>
+          <a href="index.html" class="brand"><span class="ko">보고 예술사진관</span><span class="en">Jongno · Since 40 years</span></a>
+          <p>종로에서 40년, 졸업앨범부터 웨딩·프로필·여권사진까지 믿고 맡기는 전문 사진관</p>
+        </div>
+        <div>
+          <h4>Menu</h4>
+          <ul>
+            <li><a href="about.html">소개</a></li>
+            <li><a href="gallery.html">작품 갤러리</a></li>
+            <li><a href="price.html">가격 안내</a></li>
+            <li><a href="album.html">졸업앨범</a></li>
+            <li><a href="contact.html">예약·오시는 길</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>전화 [미정]</li>
+            <li>카카오톡 [미정]</li>
+            <li>서울 종로구 [미정]</li>
+            <li>영업시간 [미정]</li>
+          </ul>
+        </div>
+      </div>
+      <div class="bottom">
+        <p>© 2026 보고 예술사진관</p>
+        <p>사이트의 사진은 게재 동의를 받은 사진만 사용합니다.</p>
+      </div>
     </div>
   </footer>
 
-  <!-- 휴대폰에서만 보이는 하단 버튼 -->
-  <div class="mobile-bar">
-    <a href="tel:" class="call">전화 예약</a>
-    <a href="#" class="kakao">카카오톡 문의</a>
-  </div>
+  <nav class="quick-bar" aria-label="빠른 연락">
+    <a href="tel:" class="call">전화</a>
+    <a href="sms:">문자</a>
+    <a href="#" class="kakao">카카오톡</a>
+  </nav>
 
 </body>
 </html>
